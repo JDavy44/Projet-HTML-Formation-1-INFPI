@@ -1,0 +1,177 @@
+/* Pour styliser les éléments on a besoin de sélecteur et un des premiers sélecteurs est
+le nom de la balise puis la propriété et sa valeur*/
+
+h1{
+    /*Pour prendre une couleur spécialisé on peut use hexadecimal
+    qui va de 0 à 9 et de A à F dans le schéma RRVVBB*/
+    color: rgba(0, 110, 255, 0.548);
+     /*2e methode avec rgb valeurs de 0 à 255*/
+    color:rgb(255,0,255);
+     
+}
+
+#mycolor{
+
+    /*3e methode avec rgba valeurs de 0 à 255 et dernière valeur pour la transparence*/
+    color:rgba(0, 174, 255, 0.212);
+}
+
+/* .classcolor{
+
+    color:rgb(0, 255, 115);
+} */
+
+ /*pointer using class des parents enfants mettre un espace entre les deux*/
+
+ /* .div-class .autre-class{
+    
+    color:rgb(0, 255, 115);
+} */
+
+ /*pointer un element avec 2 classes en attribut ne pas mettre d'espaces*/
+ /* .p-class.autre-class{
+    
+    color:rgba(182, 34, 125, 0.301);
+} */
+
+ /*pointer tous les paragraphes avec une classe commune comme valeur*/
+
+ /* p.autre-class{
+    
+    color:rgba(34, 56, 182, 0.301);
+} */
+
+ /*pointer sur un elt qui a une classe OU une autre  OU les deux avec une ","*/
+ /* .p-class , .autre-class{
+    
+    color:rgba(64, 182, 34, 0.301);
+} */
+
+ /*pointer using nom balise des ascendant descendant mettre un espace entre les deux*/
+ /* div p{
+    
+    color:rgb(129, 23, 32);
+} */
+
+/*pointer using nom balise des parents enfants mettre un espace entre les deux*/
+/* div > p{
+    
+    color:rgb(58, 21, 221);
+} */
+/*pointer sur tous les éléments*/
+/* *{
+    color:brown;
+} */
+
+/* Utilisation de la pseudo classe Hover = survoler l'élément*/
+a:hover{
+    color:red;
+}
+
+/* Visited = lien déjà visité mais il y a priorité donc le hover n'est pas appliqué */
+a:visited{
+    color:rgb(0, 255, 136);
+}
+
+/* Pour appliquer le hover concaténer mot-clé */
+a:visited:hover{
+    color:red;
+}
+
+/* Application de la color au premier enfnant */
+/* p:first-child{
+    color:rosybrown
+}
+p:last-child{
+    color:rgb(20, 23, 224)
+} */
+
+/* Les variables pour appliquer un attribut en pseudo classe = pair*/
+/* p:nth-child(2n){
+    color: red;
+} */
+/* Pour les impairs*/
+/* p:nth-child(2n+1){
+    color: blue;
+} */
+/* On peut rajouter des précisions dans la cible */
+/* p:nth-child(n):not(p:last-child, p:first-child){
+    color:green;
+} */
+#lorem{
+    /* ITALIC OBLIQUE  */
+    font-style:italic;
+    /* souligner, barré ... */
+    /* text-decoration: line-through; */
+    /* Position, justifié = ça va prendre toute la largeur de la page */
+    text-align:justify;
+    /* Pour la taille, ne pas use cm, pouces, point mais use pxel ou pourcentage de l'écriture de base */
+    font-size:20px;
+    /* Pour la police du texte, et use police google font , il faut toujours mettre plusieurs polices
+    si la première n'est pas chargée il va prendre la 2eme, san-serif fonctionnera toujours
+    elle est chargée dans tous les navigateurs et machines.*/
+    font-family: 'Matemasie', Arial, sans-serif;
+ }
+
+.p1-class.autre-class{
+/* 
+    border-top : solid 2px purple;
+    border-right : solid 2px purple;
+    border-left : solid 2px purple;
+    border-bottom : solid 2px purple; */
+    /* Au lieu de mettre les bordure dans les 4 côtés on l'écrit en 1 seule fois!! */
+     /* Il y a plein d'autres valeurs que solid ex : double, dashed... */
+    border:solid 2px purple;
+    /* Définir un angle au bordures */
+    /* border-radius: 10px; */
+    /* Pour mettre des bordures différentes selon les côtés qui va dans le sens des aiguilles */
+    /* border-radius: 10px 50px 3px 8px; */
+    /* Bordure elliptique */
+     border-radius: 10px/20px;
+     /* pOur l'ombre xoffset (horizontal) yoffset(avant arrière) */
+     /* using CAN I USE pour savoir comment les navigateurs interprètent ces valeurs */
+     box-shadow: -10px -10px green;
+   
+}
+
+img{
+    /* FLOAT = l'image se met à droite ou à gauche du texte */
+    /* float:right; */
+    /* ^Par défaut l'image est static */
+    /* position:static; */
+    /* fixed = L'image ne bouge pas mais je scroll down elle est toujours visble
+    à la même position */
+    /* position:fixed; */
+    /* Position relative : elle va bouger par rapport au px mais toujours 
+    en restant à l'endroit où elle a été défini en HTML */
+    position:relative;
+    /* Elle va être situé par rapport à la page, donc ici 10 px en
+    partant du haut de la page et 10px de la gauche de la page... et il nebouge jamais */
+    /* position:absolute; */
+    top:10px;
+    left:10px;
+    z-index:100;
+    width:25%;
+    height:25%;
+}
+
+/* On utilise clear pour dire qu'à partir de ce paragraphe 
+mon image se trouve au-dessus, en gros 'j'enlève ce paragraphe d'être
+à côté de l'image */
+div{
+    /* Si l'image est flottant à droite on met right ect... */
+    clear:both;
+}
+
+body{
+    
+    background-color: FFFFFF;
+    /* Par défaut elle est répétée */
+    background-image: url('HP_Laptop.jpg');
+    /* Pour que ce ne soit pas répété */
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-x; */
+    /* pour être centré de 50% horizont et vertical */
+    background-position: 50%;
+    
+}

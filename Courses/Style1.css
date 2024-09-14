@@ -1,0 +1,118 @@
+/* #div1, p{
+    border:solid 2px blue;
+    width: 20%;
+    height: 50px;
+    overflow:auto;
+} */
+
+span{
+    color:green;
+}
+
+button{
+
+    background-color: green;
+    padding: 50px;
+    margin: 30px;
+    height: 05px;
+    width: 100px;
+    
+}
+
+.un{
+    border : solid 3px blue;
+    /* Elle ne dépassera jamais cette taille ça permet de garder la taille */
+    max-height:300px;
+    width:300px;
+    
+}
+
+.deux{
+    border : solid 3px rgb(230, 15, 15);
+    height:200px;
+    width:200px;
+    /* margin-top : 30px; */
+    /* On peut l'écrire de cette façon en commençant de top right bottom left
+    sesn des aiguilles d'une montre */
+    margin : 20px 10px 300px 10px;
+    /* le padding va changer la taille de l'élément */
+    padding: 30px;
+}
+
+.trois{
+    border : solid 3px rgb(136, 255, 0);
+    height:100px;
+    width:100px;
+}
+
+#flexible{
+    /* Pour aligner les uns à côté des autres mais les blocs 
+    s'écrasent lorsque je rédui l apage droite/gauche */
+    display : flex;
+    /* Pour ne pas écraser les elts mais passe à la ligne */
+    flex-wrap: wrap;
+    /* Pour commencer les bloac à droite */
+    /* flex-direction : row-reverse;
+    /* Pour commencer les blocs en bas */
+    /* flex-direction : column-reverse;  */
+    /* Pour changer pour ramener tous les elmts à droite*/
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    /* Met des espaces qui est le vide qui reste de la pageentre les elts*/
+    /* justify-content: space-between; */
+    /* Met des spaces à gauche et droite de chaque elt */
+    /* justify-content: space-around; */
+    /* POur mettre les mêm space entre chaque elmt */
+    /* justify-content: space-evenly; */
+    /* Les elmts commencent du bas */
+    /* align-items: flex-end; */
+    border:solid 4px black;
+    height: 400px;
+    /* Like justify-content on the vertical axis */
+    /* align-content: space-evenly; */
+}
+
+#flexible > div{
+    height: 90px;
+    width: 200px;
+}
+.content-un{
+    background-color :skyblue;
+    /* Il apparaitra après tous les blocs car les autres blocs sont à 0
+    ici ce n'est pas la position 3 mais en fonction du numéro de l'ordre des 
+    autres blocs */
+    /* Pour que le bloc prenne l'espace  */
+    order : 3;
+    /* l'élément s'accapare de toute la place dispo */
+    flex :1;
+}
+
+.content-deux{
+    background-color :tomato;
+    order :2;
+    margin : auto;
+}
+
+.content-trois{
+    background-color :purple;
+}
+
+.content-quatre{
+    background-color :greenyellow;
+}
+
+/* td = table data cell */
+td, th{
+    border: solid 2px black;
+}
+
+table{
+    /* Pour enlever les espaces entre les bordures du tableau */
+    border-collapse: collapse;
+}
+input:focus, textarea:focus{
+    background-color: goldenrod;
+}
+input:invalid{
+    border-color: red;
+}

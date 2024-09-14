@@ -1,0 +1,72 @@
+<!-- Ce n'est pas une balise mais Pour que le navigateur comprenne que c'est un page html -->
+
+<!DOCTYPE html> 
+<html lang="fr">
+
+ <!-- head = paramétrer les informations primordiales de la page  -->
+
+    <head>
+ <!-- jeu d'encodage pour affichage des accents => c'est une balise orpheline -->
+        <meta charset="utf-8">
+        <title>Myfirstpage</title>
+
+         <!-- deuxième méthode pour écrire CSS se positionner dans un ensemble de balise head ou body  -->
+    
+        <style>
+
+        </style>
+
+    </head>
+
+    <body>
+
+         <!-- première méthode pour écrire CSS se positionner dans une balise bien donnée  -->
+        <h1 style="">Mon titre 1</h1>
+        <!-- il y a 6 niveaux de titres jusqu'à h6 -->
+        <h1>Voici mon grand titre</h1>
+        <!-- em = pour mettre en italic ou mettre en relief en evidence c'est vraiment l'utilité-->
+        <h2>Cela est <em>mon deuxième</em> titre</h2>
+        <!-- br = retour de ligne -->
+        <!-- balise p => fait un petit espace et un retour de ligne automatique-->
+        <p>As salam alaykoum </br> 
+        Voici ma page</p>
+        <!-- strong  = texte en GRAS -->
+        <p>C'est <strong>ma première</strong> ligne</p>
+         <!-- div n'a pas de fonctionnalité propre, ne fait pas de retour a la ligne
+           = encadrer du texte -->
+           <!-- mark = pour surligner , de base c'est en jaune-->
+        <div>Une <mark>deuxième</mark> ligne</div>
+        <div>Une troisième ligne</div>
+        
+         <!-- Liste ordonée à puces, de base cette liste elle met les éléments avec un petit décalage -->
+        <ul>
+            <li>Premier élément</li>
+            <li>Deuxième élément</li>
+            <li>Troisième élément</li>
+        </ul>
+
+        <!-- Liste ordonée numérotées, de base cette liste elle met les éléments avec un petit décalage -->
+        <ol>
+            <li>Premier élément</li>
+            <li>Deuxième élément</li>
+            <li>Troisième élément</li>
+        </ol>
+
+        <a href="page1.html">Voici notre lien page 1</a> <br/>
+
+        <!-- Pour qu'il trouve le fichier directement il faut que ce soit à la même racine-->
+        <!-- target pour open dans un new tab-->
+        <a href="Sous-dossier/page2.html" target="_blank">Voici notre lien page 2</a> <br/>
+        <!-- pour download use link-->
+        <a href="word.docx">Voici notre lien de télécharghement word</a> <br/>
+        <!-- pour envoi email use link, mais besoin d'un serveur de type SMTPafin que cela fonctionne-->
+        <a href="mailto:adresse@email.com">Voici notre lien pour send a email</a> <br/>
+        <a href="page3.html">Voici notre lien de page 3 CSS</a> 
+
+
+
+    </body>
+
+
+</html>
+

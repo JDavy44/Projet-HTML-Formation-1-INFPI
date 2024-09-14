@@ -1,0 +1,54 @@
+ <!-- pour avoir une structure HTML ecrire "!" puis entrer  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- troisième méthode pour écrire CSS en appelant un fichier spécial css
+     les données remplies rel, type c'est pour le référencement -->
+     <!--  « rel » : Permet de définir la relation entre le document et la ressource (ici feuille de style).
+     « type » : Précise le type de document, par exemple image/png, ou encore text/html qui
+    sont également possible comme valeurs.-->
+    <link rel="stylesheet" type="text/css" href="Style.css"/>
+     <!-- Pour utiliser une autre police de google font  -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Matemasie"/>
+    
+</head>
+<body>
+    <!-- id est unique pour chaque balise mais par contre classe peut être using dans plusieurs balises -->
+    <h1>Voici ma page H1</h1>
+    <h1 id="mycolor">Voici ma page 3</h1>
+    <!-- le second nom est une classe aussi, on met "-" ou majuscule dans le nom pour différencier -->
+    <h1 class="class-color class-case2">Voici ma page 3 Encore une fois!</h1>
+    <h1 class="classcolor">Voici ma page 3 Encore 2 fois!</h1>
+    <!--<img src='HP_Laptop.jpg'/>-->
+    <div class="div-class">
+        <p class="p-class autre-class">Un paragraphe</p>
+        <h3>Troisième niveau</h3>        
+        <p class="p-class">Un second paragraphe</p>
+        <p class="p-class">Un 3E paragraphe</p>
+        <p class="p-class">Un 4E paragraphe</p>
+        
+        <p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Ut voluptate iure voluptatibus aliquid aperiam, eius, 
+            debitis quasi corporis consequuntur nam assumenda nisi delectus. 
+            Ex odio vero assumenda ullam, sint quisquam!</p>
+    </div>
+    <!-- Mon image se met tout à droite de tous les éléments 
+     car elle est plus grande que les éléments-->
+    <!--<img src='HP_Laptop.jpg'/>-->
+    <p class="autre-class">Un 5E paragraphe</p>
+    <p class="p1-class autre-class">Un 6E paragraphe</p>
+     <!-- aside est le père de p, mais div est son ascendant/ancêtre-->
+    <div>
+        <aside>
+            <p>Un DERNIER paragraphe</p>
+        </aside>
+    </div>
+    <a href="#">Voici le lien de ma page CSS</a> <br/>
+    <a href="abcdefg">Voici un lien inexistant</a>
+    
+</body>
+</html>

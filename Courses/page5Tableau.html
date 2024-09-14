@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="Style1.css"/>
+</head>
+<body>
+    <table>
+         <!-- thead tfoot puis tbody ordre à respecter en html même si 
+          dans la page elle n'apparait pas comme ça!! Mais ce n'est pas 
+          obligatoire mais pratique pour les grds tableaux-->
+        <thead>
+            <tr>
+                <!-- th pour les colonnes en-têtes-->
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Age</th>
+            </tr>
+
+        </thead>
+        <tfoot>
+            <tr>
+                <!-- th pour les colonnes en-têtes-->
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Age</th>
+            </tr>
+
+        </tfoot>
+       <tbody>
+            <tr>
+                <td>Aziz</td>
+                <td>Sami</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td >Aziz</td>
+                <!-- pour prendre 2 colonnes attention à ce que la prochaine
+                colonne soit vide-->
+                <td colspan="2">Sami</td>
+                
+            </tr>
+            <tr>
+                <td>Aziz</td>
+                <td>Sami</td>
+                <!-- pour prendre 2 lignes attention à ce que la prochaine
+                ligne soit vide-->
+                <td rowspan="2">25</td>
+            </tr>
+            <tr>
+                <td>Aziz</td>
+                <td>Sami</td>
+            
+            </tr>
+       </tbody>        
+    </table>
+    
+    <!-- Pour create a form, method pour la method de recuperation data
+     et action pour cibler la page vers laquelle on recupere data
+     enctype pour dépôt d'un fichier ex: mettre un fichier image  -->
+    <form method = "post" action="validation.php" enctype="multipart/form-data">
+        <!-- un champ pour rentrer des data, label pour dire ce que l'on attend dans ce
+         champ, id dans input est le même que name 
+         for ="nom id" pour cliquer sur le nom il yaura le curseur , value = champ deja rempli
+         placeholder pour afficher le message en transparent pour aider la personne à rentrer les data -->
+        <label for="pseudo">Votre pseudo : </label>
+        <input id="pseudo" type="text" name="pseudo" placeholder="Votre pseudo" maxlength="10" size="40" value="My name"> 
+        <br/><br/>
+        <!-- Couleur, ou calendrier proposé est géré par le navigateur pour manager ceci
+         using javascript-->
+         <!-- autofocus pour focus sur unchamp = selecteru déjà inséré, required champs obligatroire
+          -->
+        <label>Pwd </label><input type="password" autofocus required="required"/><br/><br/>
+        <label>Number </label><input type="number" required="required" /><br/><br/>
+        <label>Range </label><input type="range" /><br/><br/>
+        <label>Color </label><input type="color" /><br/><br/>
+        <label>Date </label><input type="date" /><br/><br/>
+        <label>Time </label><input type="time" /><br/><br/>
+          <!-- hr pour une ligne horizontale-->
+        <hr><br/>
+        <!-- Dans un smartphone un clavier adequat au champ s'ouvrira ex; pour tel un clavier
+         numerique, pour l'email un clavier avec @ facilement trouvable-->
+        <label>Email </label><input type="email" /><br/><br/>
+        <label>Url </label><input type="url" /><br/><br/>
+        <label>Tel </label><input type="tel" /><br/><br/>
+        <label>Search </label><input type="search" /><br/><br/>
+        <hr><br>
+        <label for="commentaire">Taper votre commentaire</label><br>
+         <textarea name="Commentaire" id="Commentaire" rows="10" cols="50">
+            Voici un texte par défaut
+         </textarea>
+         <hr /> <br />
+         <!--Il est important d'avoir des names différents sinon error-->
+         Cochez votre ordinateur préféré qui n'est pas un vrai ordinateur : <br />
+         <input type="checkbox" name="DELL" id="DELL" checked="checked"> <label for="DELL">DELL</label>
+         <input type="checkbox" name="ASUS" id="ASUS"> <label for="ASUS">ASUS</label>
+         <input type="checkbox" name="HP" id="HP"> <label for="HP">HP</label>
+         <input type="checkbox" name="ACER" id="ACER"> <label for="ACER">ACER</label>
+         <input type="checkbox" name="BALLON" id="BALLON"> <label for="BALLON">BALLON</label>
+         <hr /> <br />
+         <!-- Bouton radio mettre le même nom mais la value change comme ça quand 
+          je coche l'autre est décoché, checked ou checked = checked pour cocher une valeur 
+          par défaut-->
+        Est-ce que vous êtes satisfait ou remboursé:  <br />
+         <input type="radio" name="aimer" value="Oui" id="Oui" checked> <label for="Oui">Oui</label>
+         <input type="radio" name="aimer1" value="peut-être" id="peut-être" > <label for="peut-être">peut-être</label>
+         <input type="radio" name="aimer" value="NON" id="NON" > <label for="NON">NON</label>
+         <hr>
+         <label for="Pays">Mes pays</label>
+         <select name="Pays" id="Pays">
+            <optgroup label = "Afrique">
+                <option value="Maroc">Maroc</option>
+                <option value="Algérie">Algérie</option>
+                <option value="Egypte" selected="selected">Egypte</option>
+            </optgroup>
+       
+        <!-- Selected / selected="selected" pour une valeur par défaut sélected, avec value on recuperera la valeur
+         lors de lavalidation du form-->
+         <optgroup label="Moyen-Orient">
+            <option value="Emirats" >Emirats</option>
+            <option value="Arabie Saoudite" selected>Arabie Saoudite</option>
+            <option value="QATAR">QATAR</option>
+         </optgroup>
+            
+         </select>
+         <hr>
+         <!-- Quand je vais cliquer il va récuperer tous les champs et il va les envoyé
+          à la page php mise en valeur d'attribut dans le form-->
+         <input type="submit" value="Envoyer" name="Send">
+         <!-- De base il n y a pas de visuel il faut mettre controls, interface de controle
+          en fonction du navigateur, loop => pour lire en boucle-->
+
+        <!-- <audio src="maher-al-mueaqly-al-fatiha.mp3" controls loop autoplay="autoplay"></audio> -->  <br/>
+         <!-- il met des marges auto si la video n'est pas du même format 
+          poster pour mettre une image par défaut-->
+         <video src="Shaykh-Ruheily.mp4" poster="HP_Laptop.jpg" controls loop width="300" height="200">
+            Mettez à jour votre navigateur
+         </video> <br/>
+                     <!-- Autre méthode pour les audio ou video, ce sera au navigateur
+             d'interpréter quel format est compatible => c'est conseillé pour que ce 
+             soit prise en charge sur tous les navigateurs et PC c'est pour un e meme video
+             à différents formats-->
+        <audio controls loop autoplay>
+                <source src="maher-al-mueaqly-al-fatiha.mp3" type="audio/mpeg">
+                <source src="allo.acc" type="audio/acc">
+                <source src="allo.ogg" type="audio/ogg">
+        </audio>
+
+    </form>
+    
+</body>
+</html>

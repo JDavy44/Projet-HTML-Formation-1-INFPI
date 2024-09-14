@@ -1,0 +1,173 @@
+#flexible{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+#flexible > div{
+    height: 120px;
+    /* Using pourcentage pour adaptation à n'importe quel écran */
+    /* On enleve les 40% pour les use ne css et de les changer en fonction 
+    des tailles d'ecran avec media query screen, par défaut ce sera 20% qui sera appliqué
+    mais ceci est appliqué en ordre de lecture du css */
+    width: 20%;
+    /* max-width: 250px;
+    min-width: 180px; */
+}
+
+.content:nth-child(1){
+    background-color: skyblue;
+}
+
+.content:nth-child(2){
+    background-color: tomato;
+}
+
+.content:nth-child(3){
+    background-color: rgb(145, 250 , 135);
+}
+
+.content:nth-child(4){
+    background-color: rgb(215, 135, 235);
+}
+
+@media screen and (max-width:400px){
+    #flexible > div{
+        /* Pour avoir la priorité quelque soit l'ordre d'écriture du CSS */
+       width: 40% !important;
+    }
+
+}
+
+@media screen and (max-width:400.01px) and (max-width:800px){
+    #flexible > div{
+        width: 30% !important;
+     }
+    
+}
+
+.boite{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    /* Propriété de la tranasition on peut juste chiosir la hauteur
+    ou largeur */
+    /* transition-property: all; */
+    /* Durée de la transition entre les 2 chgt d'états */
+    /* transition-duration: 3s; */
+    /* On met l'ordre que l'on souhaite */
+    transition-property: height, width, background-color;
+    /* Durée de la transition pour chacun mais il faut respecter l'ordre */
+    transition-duration: 3s, 3s, 8s;
+    /* Autre façon d'écrire */
+    /* transition : height 3s, width 3s, background-color 8s; */
+    transition : all 5s;
+    /* Comment va agir la transition, lineaire, exponenetielle ??? */
+    transition-timing-function:ease ;
+    /* On peut utiliser fonction cubic bezier et définir soi même
+    les valeurs */
+    transition-timing-function:cubic-bezier(0.1, 0.1, 0.1, 0.1) ;
+    /* Pour un donné un temps à quel moment on commence la transition
+    cela met un retard!! */
+    transition-delay: 2s;
+}
+
+.boite:hover{
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+    transform: rotate(180deg);
+
+}
+
+.boiteAnimation, .boiteAnimation1, .boiteAnimation2{
+    border: solid 1px black;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    /* Pour que l'animation fonctionnne données à rentrer
+    lier avec keyframes*/
+    /* animation-name: coloration, dimension;
+    animation-duration: 3s, 5s; */
+
+    /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    /* Nombre de fois pour répéter l'animation */
+    /* animation-delay: 2s; */
+    /* animation-iteration-count: 3; */
+    /* REVERSE COMMENCER DE LA FIN VERS LE DEBUT PENDANT l'animation
+     Fin vers début/ de base c'est en normal donc il fait 
+     début->fin puis début->fin ....*/
+    /* animation-direction: alternate; */
+
+    animation-name: coloration;
+    animation-duration: 3s;
+    animation-delay: 2s;
+
+
+}
+
+.boiteAnimation:hover{
+    /* L'animation s'arrête au survol de la souris */
+    /* animation-play-state: paused; */
+
+}
+
+.boiteAnimation{
+    /* Il commence avec la couleur de base puis fini avec celle du to*/
+    animation-fill-mode: forwards;
+
+}
+
+.boiteAnimation1{
+     /* Il commence avec la couleur de from puis fini avec celle de base */
+    /* Après l'animation il revient à l'état d'origine */
+    animation-fill-mode: backwards;
+
+}
+
+.boiteAnimation2{
+     /* Il commence avec la couleur de from puis fini avec celle du to */
+    animation-fill-mode: both;
+
+}
+
+
+ /* Pour using animations MAIS à la fin cela revient à l'état de base*/
+@keyframes coloration{
+
+    from{
+        background-color: pink;
+    }
+    /* 33% de la durée d'animation */
+    33%{
+        background-color: blueviolet;
+        /* width: 150px; */
+    }
+    66%{
+        background-color: aqua;
+        /* width: 120px; */
+    }
+    to{
+        background-color: aquamarine;
+    }
+
+}
+
+@keyframes dimension{
+
+    from{
+        width: 100px;
+    }
+    33%{
+        width: 150px;
+    }
+    66%{
+
+        width: 120px;
+    }
+    to{
+        width: 100px;
+    }
+}
+
