@@ -1,0 +1,104 @@
+*{
+    /* Proprités CSS appliquable de base à toute élément de la page */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Anime Ace', sans-serif;
+    text-decoration: none;    
+
+}
+
+body{
+    background-color: #FEFFD9;
+}
+
+
+.header {
+    position: fixed;
+    width: 100%; 
+    height : 50px; 
+    background-color: #302F2F;
+    /* Pour mettre à l'horizontal */ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* z-index: 100; */
+}
+
+.logo {
+   
+    margin-left: 80px;
+}
+
+img{
+    width:100px;
+    /* Afin que la hauteur de l'image rentre dans la hauteur du header */
+   height: 50px;
+}
+
+header nav{
+    margin-right: 80px;
+    
+}
+
+.navbar ul{
+    list-style-type: none;
+
+}
+
+.navbar a{ 
+    color: white;  
+}
+
+.navbar li{
+    /* Conversion en type inline-block pour appliquer les propriétés blocs*/
+    display: inline-block;
+    padding-left: 450px;
+    
+}
+
+@media screen and (max-width:430px){
+
+    .header{
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .logo{
+        margin-bottom: auto;;
+    }
+    header nav{
+        margin-right: 0px;
+        
+    }
+    .navbar li{
+    
+        padding-left: 0px;
+        
+    }
+    
+
+}
+
+footer{
+
+    width: 100%;
+    height : 110px;
+    background-color: RGB(140, 208, 240);
+    position: fixed;
+    bottom: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
