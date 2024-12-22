@@ -1,104 +1,717 @@
-*{
+* {
     /* Proprités CSS appliquable de base à toute élément de la page */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Anime Ace', sans-serif;
-    text-decoration: none;    
+    text-decoration: none;
 
 }
 
-body{
+
+
+body {
     background-color: #FEFFD9;
+
 }
+
+/* -------------------- HEADER ------------------------- */
 
 
 .header {
     position: fixed;
-    width: 100%; 
-    height : 50px; 
+    width: 100%;
+    height: 60px;
     background-color: #302F2F;
-    /* Pour mettre à l'horizontal */ 
+
+}
+
+.header .navbar {
+    width: 100%;
+    /* Pour mettre à l'horizontal*/
+    display: flex;
+    justify-content: space-around;
+    /* Pour passer à la ligne lors de la réduction de la fenêtre */
+    flex-wrap: wrap;
+
+
+}
+
+.navbar .optionmenu {
+
+    width: 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* z-index: 100; */
-}
-
-.logo {
-   
-    margin-left: 80px;
-}
-
-img{
-    width:100px;
-    /* Afin que la hauteur de l'image rentre dans la hauteur du header */
-   height: 50px;
-}
-
-header nav{
-    margin-right: 80px;
-    
-}
-
-.navbar ul{
-    list-style-type: none;
 
 }
 
-.navbar a{ 
-    color: white;  
+.logo img {
+    height: 60px;
 }
 
-.navbar li{
-    /* Conversion en type inline-block pour appliquer les propriétés blocs*/
-    display: inline-block;
-    padding-left: 450px;
-    
-}
 
-@media screen and (max-width:430px){
-
-    .header{
-        height: 100px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    .logo{
-        margin-bottom: auto;;
-    }
-    header nav{
-        margin-right: 0px;
-        
-    }
-    .navbar li{
-    
-        padding-left: 0px;
-        
-    }
-    
+.navbar .lienOption a {
+    color: white;
+    font-size: 15px;
 
 }
 
-footer{
+
+/* -------------------- BANNER------------------------- */
+
+
+.banner img {
+    /* Afin que mon image prenne la taille de mon élément div */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.banner {
+    display: flex;
+    /* Pour centrer mon élément div */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 60vw;
+    /* Laisser de l'espace en hauteur */
+    padding-top: 100px;
+
+}
+
+
+
+/* ------------------- Section DERNIERS TOMES ET PERSOS -----------------------*/
+
+
+.bloc-tome-persos {
+    /* Pour mettre les deux sections "derniers tomes" et "Persos" à côtés */
+    display: flex;
+
+    flex-wrap: wrap;
+
+    flex-direction: row;
+
+    margin-top: 50px;
+
+
+
+}
+
+
+/* -------------------- DERNIERS TOMES ------------------------- */
+
+/* Selecteur pour le bloc entier des tomes */
+
+#bloc-tomes {
+    flex-direction: column;
+    width: calc(90% - 30px);
+    height: auto;
+    background-color: RGB(140, 208, 240, 0.72);
+    /* Bordure avec contour solide */
+    border: solid 2px black;
+    /* Mettre une ombre sur tous les côtés de la div */
+    box-shadow: 0 0 2px 2px rgb(175, 169, 169);
+    /* Pour avoir les bordures arrondies  */
+    border-radius: 20px;
+}
+
+
+
+/* Le titre "Derniers Tomes" du cadre */
+#bloc-tomes>p {
+    margin-left: 10px !important;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+/* On pointe sur la div de tous les blocs de tomes */
+.elts-tomes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+}
+
+
+/* On pointe sur chaque bloc des tomes individuellement */
+.tome {
+
+    width: 30%;
+    height: auto;
+    background-color: #F3DCEB;
+    border-radius: 10px;
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    padding: 5px 0px 5px 10px;
+
+
+}
+
+/* Div pour le texte de chaque tome */
+.textetomes {
+
+    width: 60%;
+    padding-left: 10px;
+
+}
+
+/* Paragraphe du texte de chaque tome */
+.textetomes>p {
+
+    font-size: 0.90vw;
+    line-height: 1vw;
+    font-style: italic;
+
+}
+
+/* Selecteur de la div image de chaque tome */
+.imagestomes {
+    width: 40%;
+    display: flex;
+
+}
+
+
+
+/* Images du bloc tomes */
+
+.imagestomes img {
+    width: 100%;
+    /* justify-content: center;
+    align-items: center; */
+    margin-top: auto;
+    margin-bottom: auto;
+
+
+}
+
+
+
+/* -------------------- PERSOS ------------------------- */
+
+/* On pointe sur le bloc persos en entier */
+
+#bloc-persos {
+    width: 10%;
+    padding-top: 20px;
+}
+
+/* Le titre "PERSOS" du bloc PERSOS*/
+
+#bloc-persos .titre-persos p {
+
+
+    text-align: start;
+    padding-bottom: 15px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+/* On pointe sur chaque élément du bloc persos */
+#bloc-persos div {
+    padding-bottom: 10px;
+    margin-left: 25px;
+}
+
+.elements-persos {
+    padding-right: 30px;
+}
+
+
+/* On pointe sur chaque image de la div persos */
+
+#bloc-persos .perso img {
+    width: 5vw;
+    margin-right: 30px;
+
+}
+
+/* Pointer sur la div de l'image pour centrer l'image */
+#bloc-persos .perso {
+    text-align: center;
+
+}
+
+/* On pointe sur chaque nom des persos */
+#bloc-persos .perso p {
+    font-size: 12px;
+    padding-right: 25px;
+}
+
+/* -------------------- COMMENTAIRES ------------------------- */
+
+/* On pointe sur le bloc entier "Commentaires" */
+#bloc-comments {
+
+    background-color: #FFF;
+    border: dashed 2px #FB46F2;
+    /* Pour avoir les bordures arrondies  */
+    border-radius: 50px;
+    max-width: 1400px;
+    height: auto;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+/* On pointe sur le paragraphe nommé "Commentaires" */
+#bloc-comments>p {
+    margin-left: 10px !important;
+    margin-top: 30px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+/* On pointe sur chaque bloc "images et commentaires" */
+.comments {
+
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    justify-content: space-around;
+
+}
+
+/* Div de chaque avatar */
+.imagescomments {
+
+    margin-left: 50px;
+    height: 100px;
+    width: 210px;
+
+}
+
+/* Images des avatars */
+.imagescomments img {
+
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
+
+
+}
+
+/* Nom des avatars */
+.imagescomments p {
+
+    position: absolute;
+    font-size: 15px;
+    padding-left: 20px;
+
+
+}
+
+/* Barre de séparation verticale */
+.vertical {
+
+    border: 2px solid #0E99F7;
+    height: 120px;
+
+}
+
+/* Bloc des commentaires de chaqque avatar */
+.elts-txt-comments {
+    display: flex;
+    flex-direction: row;
+    margin-left: 60px;
+    font-size: 15px;
+
+}
+
+/* Paragraphe des commentaires de chaque avatar */
+.txt-comments {
+
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+
+/* Notation par des étoiles de chaque avatar */
+.star {
+
+    float: right;
+    margin-right: 15px;
+
+}
+
+/* Barre horizontale après chaque commentaire */
+hr {
+
+    border: 2px solid #FB46F2;
+    width: 30%;
+    margin: auto;
+
+}
+
+/* Sélecteur pour chaque étoile individuelle */
+.fa-star {
+    color: #0E99F7;
+    height: 18px;
+}
+
+
+/* -------------------- FOOTER ------------------------- */
+
+/* Toute la section du footer */
+footer {
 
     width: 100%;
-    height : 110px;
+    height: auto;
     background-color: RGB(140, 208, 240);
-    position: fixed;
+    margin-top: 40px;
     bottom: 0;
+
 
 }
 
+/* Selecteur pour le contenu du footer */
+.myfooter {
+
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 50px;
+}
+
+/* Bloc "Nous Contacter" */
+.contact {
+    width: 50%;
+}
+
+/* Les deux titres du footer */
+.titre-footer {
+    margin-left: 50px !important;
+    margin-top: 30px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+/* Le texte contenu dans le bloc "Nous contacter" */
+.contact>p {
+    margin-left: 50px !important;
+    font-size: 15px
+}
+
+/* Bloc "Nos Reseaux" */
+.reseaux {
+    width: 50%;
+}
+
+.reseaux>i {
+    font-size: 30px;
+}
+
+/* Bloc de tous les logos de la section "Nos reseaux" */
+.bloc-logo-reseaux {
+    font-size: 30px;
+    display: flex;
+    padding-left: 15px;
+    justify-content: space-evenly;
+}
+
+/* On pointe sur chaque logo */
+.logo-reseaux {
+
+    width: 60px;
+    height: 60px;
+    display: flex;
+    border-radius: 50%;
+    border: solid 2px black;
+    /* Transition de 2 secondes lors du survol */
+    transition-duration: 2s;
+
+}
+
+.logo-reseaux i {
+    margin: auto;
+
+}
+
+/* Survol sur chaque icone */
+.logo-reseaux:hover {
+    background-color: #590CF1;
+}
 
 
+/* ||||||||||||||||||| TABLETTES |||||||||||||||||||||||||| */
+
+/* Pour appliquer le mode responsive pour les tablettes */
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+    /* -------------------- HEADER ------------------------- */
+
+    .header .navbar {
+        justify-content: space-between;
+
+    }
+
+    .navbar .optionmenu {
+        width: 37.5%;
+
+    }
+
+    .navbar .optionmenu .lienOption {
+
+        font-size: 10px;
+
+    }
+
+    /* -------------------- BANNER------------------------- */
+
+    .banner img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .banner {
+
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        width: 80vw;
+        padding-top: 100px;
+
+    }
+
+    /* -------------------- SECTION TOMES ------------------------- */
+
+    #bloc-tomes {
+
+        order: 1;
+        width: 100%;
+        margin-left: 20px;
+
+    }
+
+    /* On pointe sur chaque bloc des tomes */
+    .tome {
+        width: calc(45% + 20px);
+    }
+
+    .textetomes>p {
+
+        font-size: 1.9vw;
+        line-height: 2vw;
+    }
 
 
+    /* -------------------- SECTION PERSOS ------------------------- */
+    #bloc-persos {
+        width: 100%;
+    }
+
+    .elements-persos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+
+    .bloc-elts-persos {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+
+    #bloc-persos .perso img {
+        width: 100px;
+    }
+
+    /* -------------------- SECTION COMMENTAIRES ------------------------- */
+
+    .imagescomments p {
+
+        display: none;
 
 
+    }
+
+    .imagescomments {
+
+        margin-left: 20px;
+
+    }
+
+    .elts-txt-comments {
+        margin-left: 20px;
+    }
 
 
+}
+
+/* ||||||||||||||||||| MOBILES |||||||||||||||||||||||||| */
 
 
+/* Pour appliquer le mode responsive pour les mobiles */
+@media screen and (max-width:767px) {
 
+    /* -------------------- SECTION HEADER ------------------------- */
+    .header {
+        position: static;
+        height: 120px;
+        display: flex;
+        min-width: 400px;
+
+    }
+
+    .navbar .optionmenu {
+
+        min-width: 400px;
+        width: 60%;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .navbar #optionmenu2 {
+
+        align-items: start;
+        margin-left: 60px;
+
+    }
+
+    .navbar #optionmenu1 {
+        padding-right: 10px;
+
+    }
+
+    .logo img {
+        width: auto;
+    }
+
+    /* -------------------- SECTION BANNER ------------------------- */
+
+    .banner {
+        min-width: 100vw;
+        background-size: 100% 100%;
+        /* Laisser de l'espace en hauteur */
+        padding-top: 135px;
+        margin-left: 5px;
+        margin-right: 5px;
+
+    }
+
+    .banner img {
+        min-width: 100%;
+    }
+
+    /* -------------------- SECTION TOMES ------------------------- */
+
+    #bloc-tomes {
+        order: 1;
+        width: 100%;
+        margin-right: 5px;
+        padding-bottom: 0px;
+
+    }
+
+    .tome {
+        width: calc(100% + 60px);
+
+    }
+
+    .textetomes>p {
+        font-size: 3vw;
+        line-height: 3.5vw;
+    }
+
+    /* -------------------- SECTION PERSOS ------------------------- */
+
+    #bloc-persos {
+        width: 100%;
+
+    }
+
+
+    .elements-persos {
+
+        padding: 0%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+
+    }
+
+    #bloc-persos .perso img {
+        width: 100px;
+    }
+
+    /* -------------------- SECTION COMMENTAIRES ------------------------- */
+
+
+    #bloc-comments {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .elts-txt-comments {
+        margin-left: 10px;
+    }
+
+    .txt-comments {
+
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .vertical {
+        display: none;
+        padding: 0;
+    }
+
+    .imagescomments {
+        display: none;
+    }
+
+    /* -------------------- SECTION FOOTER ------------------------- */
+
+    .myfooter {
+        padding-bottom: 10px;
+        flex-wrap: wrap;
+
+
+    }
+
+    .contact {
+        min-width: 400px;
+        width: 100%;
+    }
+
+    .reseaux {
+        width: 100%;
+    }
+
+    .titre-footer {
+        margin-left: 30px !important;
+
+    }
+
+    .contact>p {
+        margin-left: 30px !important;
+
+    }
+
+    .bloc-logo-reseaux {
+
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 40px;
+
+    }
+
+}
